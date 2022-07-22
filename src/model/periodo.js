@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 
 const PeriodoSchema = new Schema({
 
-    nombre: String,
-    URL_icono: String
+    recursos: String,
+    id_grado: String
 
 });
 
 
 
-const Per = mongoose.model("Asg",PeriodoSchema);
+const Per = mongoose.model("Per",PeriodoSchema);
 module.exports = Per;

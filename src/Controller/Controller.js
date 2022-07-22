@@ -6,6 +6,7 @@ const Asg = require('../model/asignatura');
 const Rec = require('../model/recursos');
 const Lab = require('../model/laboratorio');
 const Grado = require('../model/grado');
+const Per = require('../model/periodo');
 require('dotenv').config();
 class Controller{
 
