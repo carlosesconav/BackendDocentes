@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const DocAsginSchema = new Schema({
 
-    id_docente: String,
-    id_asignatura: String
+    id_docente: Object,
+    id_asignatura: Object
 
 
 });

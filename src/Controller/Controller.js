@@ -1,5 +1,11 @@
 const mongoose = require('mongoose');
 const User = require('../model/User');
+const Doc =  require('../model/docente');
+const DA = require('../model/docasig');
+const Asg = require('../model/asignatura');
+const Rec = require('../model/recursos');
+const Lab = require('../model/laboratorio');
+const Grado = require('../model/grado');
 require('dotenv').config();
 class Controller{
 

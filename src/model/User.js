@@ -6,7 +6,7 @@ const UserSchema = new Schema({
 
     user: String,
     correo: String,
-    id_docente: String
+    id_docente: Object
 
 
 });
