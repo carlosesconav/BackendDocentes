@@ -32,6 +32,8 @@ class Controller{
 
     }
 
+    //Acciones de la Persona o Usuario
+
     createUsers(req, res){
 
         const user = User(req.body);
@@ -54,6 +56,31 @@ class Controller{
         })
         
     }
+
+    //Docentes
+
+    createDocentes(req, res){
+
+        const doc = Doc(req.body);
+        doc.save()
+        .then((data)=> res.json(data))
+        .catch((error)=> res.json({message: error}))
+
+
+    }
+
+    getDocentes (res){
+
+        Doc.find({},(err, docentes)=>{
+
+            if(err) throw err;
+
+            res.send(docentes);
+
+        })
+
+    }
+
 
 }
 

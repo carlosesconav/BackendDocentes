@@ -8,10 +8,7 @@ const UserSchema = new Schema({
     correo: String,
     id_docente: Object
 
-
 });
-
-
 
 const User = mongoose.model("User",UserSchema);
 module.exports = User;

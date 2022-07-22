@@ -9,7 +9,5 @@ const PeriodoSchema = new Schema({
 
 });
 
-
-
 const Per = mongoose.model("Per",PeriodoSchema);
 module.exports = Per;
