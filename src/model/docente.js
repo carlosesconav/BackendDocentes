@@ -10,5 +10,5 @@ const DocenteSchema = new Schema({
 
 });
 
-const Doc = mongoose.model("Doc",DocenteSchema);
+const Doc = mongoose.model("Doc", DocenteSchema);
 module.exports = Doc;

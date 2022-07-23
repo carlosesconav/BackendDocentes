@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const AsignaturaSchema = new Schema({
 
     nombre: String,
@@ -9,7 +8,5 @@ const AsignaturaSchema = new Schema({
 
 });
 
-
-
-const Asg = mongoose.model("Asg",AsignaturaSchema);
+const Asg = mongoose.model("Asg", AsignaturaSchema);
 module.exports = Asg;

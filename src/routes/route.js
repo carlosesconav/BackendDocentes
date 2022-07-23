@@ -26,15 +26,46 @@ app.post("/createUser", (req, res) => {
 
 //Rutas Docente
 
-app.post("/createDoc",(req, res)=>{
+app.post("/createDoc", (req, res) => {
 
     controller.createDocentes(req, res);
 
 })
 
-app.get("/getDocentes",(req, res)=>{
+app.get("/getDocentes", (req, res) => {
 
     controller.getDocentes(res);
+
+})
+
+//Ruta asignatura
+
+app.get("/getAsg", (req, res) => {
+
+    controller.getAsignatura(res)
+
+})
+
+app.post("/createAsg", (req, res) => {
+
+    controller.createAsignatura(req, res);
+
+})
+
+//Ruta Grado
+
+app.get("/getGrado", (req, res) => {
+
+
+    controller.getGrado(res);
+
+
+})
+
+app.post("/createGrado", (req, res) => {
+
+    controller.createGrado(req, res);
+
 
 })
 

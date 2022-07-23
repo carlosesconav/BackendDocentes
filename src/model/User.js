@@ -4,11 +4,24 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
 
-    user: String,
+    nombre:{
+
+      type:  String,
+      required: 'Este campo es reqerido'
+
+    }, 
     correo: String,
-    id_docente: Object
+    docentes: [{
+
+        id:{
+
+            type: mongoose.Schema.ObjectId,
+            ref: 'docs'
+        }
+
+    }]
 
 });
 
-const User = mongoose.model("User",UserSchema);
+const User = mongoose.model("User", UserSchema);
 module.exports = User;
