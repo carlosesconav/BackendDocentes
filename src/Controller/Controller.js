@@ -43,7 +43,6 @@ class Controller {
             .then((data) => res.json(data))
             .catch((error) => res.json({ message: error }))
 
-
     }
 
     getUsers(res) {
@@ -58,6 +57,18 @@ class Controller {
 
     }
 
+    deleteUser(id, res) {
+
+        User.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+            res.send({ message: "Usuario ha sido eliminado" })
+
+        })
+
+
+    }
+
     //Docentes
 
     createDocentes(req, res) {
@@ -66,7 +77,6 @@ class Controller {
         doc.save()
             .then((data) => res.json(data))
             .catch((error) => res.json({ message: error }))
-
 
     }
 
@@ -77,6 +87,19 @@ class Controller {
             if (err) throw err;
 
             res.send(docentes);
+
+        })
+
+    }
+
+    deleteDocente(id, res) {
+
+        Doc.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
+
 
         })
 
@@ -98,11 +121,26 @@ class Controller {
         Asg.find({}, (err, asignatura) => {
 
             if (err) throw err;
+
             res.send(asignatura);
 
         })
 
     }
+
+    deleteAsignatura(id, res) {
+
+        Asg.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
+
+
+        })
+
+    }
+
 
     //Grado
 
@@ -113,47 +151,177 @@ class Controller {
             .then((data) => res.json(data))
             .catch((error) => res.json({ meesage: error }))
 
-
     }
-
 
     getGrado(res) {
 
         Grado.find({}, (err, grado) => {
 
             if (err) throw err;
+
             res.send(grado)
+
+        })
+
+    }
+
+    deleteGrado(id, res) {
+
+        Grado.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
 
 
         })
 
-
-
     }
+
 
     //DA
 
     createDA(req, res) {
 
         const da = DA(req.body);
-        da.save().then((data) => res.json(data)).catch((error) => res.json({ message: error }))
-
+        da.save()
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }))
 
     }
 
     getDa(res) {
 
         DA.find({}, (err, DA) => {
-
             if (err) throw err;
             res.send(DA);
 
         })
 
+    }
+
+    deleteDA(id, res) {
+
+        DA.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
+
+
+        })
 
     }
 
 
+
+    // Laboratorio
+
+    createLaboratorio(req, res) {
+
+        const lab = Lab(req.body);
+        lab.save()
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }))
+
+    }
+
+
+    getLaboratorio(res) {
+
+        Lab.find({}, (err, Lab) => {
+
+            if (err) throw err;
+            res.send(Lab)
+
+
+        })
+
+    }
+
+    deleteLaboratorio(id, res) {
+
+        Lab.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
+
+        })
+
+    }
+
+    //recursos
+
+    createRecursos(req, res) {
+
+        const rec = Rec(req.body);
+        rec.save()
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }))
+
+    }
+
+
+    getRecursos(res) {
+
+        Rec.find({}, (err, Lab) => {
+
+            if (err) throw err;
+            res.send(Lab)
+
+
+        })
+
+    }
+
+    deleteRecuros(id, res) {
+
+        Rec.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
+
+        })
+
+    }
+
+    //Periodo
+
+    createPeriodo(req, res) {
+
+        const per = Per(req.body);
+        per.save()
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }))
+
+    }
+
+
+    getPeriodo(res) {
+
+        Per.find({}, (err, Lab) => {
+
+            if (err) throw err;
+            res.send(Lab)
+
+
+        })
+
+    }
+
+    deletePeriodo(id, res) {
+
+        Per.deleteOne({ _id: id }, (err) => {
+
+            if (err) throw err;
+
+            res.send({ message: "Usuario ha sido eliminado" })
+
+        })
+
+    }
 
 }
 
