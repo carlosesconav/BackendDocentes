@@ -133,20 +133,20 @@ class Controller {
 
     //DA
 
-    createDA(req, res){
+    createDA(req, res) {
 
         const da = DA(req.body);
-        da.save().then((data)=>res.json(data)).catch((error)=> res.json({ message: error }))
+        da.save().then((data) => res.json(data)).catch((error) => res.json({ message: error }))
 
 
     }
 
-    getDa(res){
+    getDa(res) {
 
-        DA.find({},(err, DA)=>{
+        DA.find({}, (err, DA) => {
 
-         if(err) throw err;
-         res.send(DA);
+            if (err) throw err;
+            res.send(DA);
 
         })
 

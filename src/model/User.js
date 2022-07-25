@@ -4,22 +4,20 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
 
-    nombre:{
+  nombre: {
 
-      type:  String,
-      required: 'Este campo es reqerido'
+    type: String,
+    required: 'Este campo es reqerido'
 
-    }, 
-    correo: String,
-    docentes: [{
+  },
+  correo: String,
 
-        id:{
+  id_docentes: [{
 
-            type: mongoose.Schema.ObjectId,
-            ref: 'docs'
-        }
+    type: mongoose.Schema.ObjectId,
+    ref: 'Doc'
 
-    }]
+  }]
 
 });
 

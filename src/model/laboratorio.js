@@ -9,5 +9,5 @@ const LaboratorioSchema = new Schema({
 
 });
 
-const Lab = mongoose.model("Lab",LaboratorioSchema);
+const Lab = mongoose.model("Lab", LaboratorioSchema);
 module.exports = Lab;

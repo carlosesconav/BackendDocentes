@@ -6,11 +6,16 @@ const RecursosSchema = new Schema({
 
     videos: String,
     guias: String,
-    enlaces:String,
+    enlaces: String,
     nombre: String,
-    id_lab: Object
+    id_lab: [{
 
-});     
+        type: mongoose.Schema.ObjectId,
+        ref: 'Lab'
 
-const Rec = mongoose.model("Rec",RecursosSchema);
+    }]
+
+});
+
+const Rec = mongoose.model("Rec", RecursosSchema);
 module.exports = Rec;
