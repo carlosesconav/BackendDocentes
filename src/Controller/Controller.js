@@ -66,6 +66,33 @@ class Controller {
 
         })
 
+    }
+
+    updateUser(user, res) {
+
+        let { id, nombre, correo } = user;
+
+        User.updateOne({ _id: id }, { $set: { nombre: nombre, correo: correo, id_docentes:id_docentes } })
+            .then(rawResponse => {
+
+                res.send({ meesage: "Usuario actualizado", raw: rawResponse });
+
+            }).catch((err) => {
+
+                if (err) throw err;
+
+            });
+
+    }
+
+    buscarUno(id, res){
+
+        User.findOne({ _id: id }, (err,user) => {
+
+            if (err) throw err;
+            res.send(user)
+
+        })
 
     }
 
@@ -100,6 +127,17 @@ class Controller {
 
             res.send({ message: "Usuario ha sido eliminado" })
 
+
+        })
+
+    }
+
+    buscarUnDocente(id, res){
+
+        Doc.findOne({ _id: id }, (err,doc) => {
+
+            if (err) throw err;
+            res.send(doc)
 
         })
 
@@ -141,6 +179,17 @@ class Controller {
 
     }
 
+    buscarUnaAsignatura(id, res){
+
+        Asg.findOne({ _id: id }, (err,asg) => {
+
+            if (err) throw err;
+            res.send(asg)
+
+        })
+
+    }
+
 
     //Grado
 
@@ -173,6 +222,17 @@ class Controller {
 
             res.send({ message: "Usuario ha sido eliminado" })
 
+
+        })
+
+    }
+
+    buscarUnGrado(id, res){
+
+        Grado.findOne({ _id: id }, (err,grado) => {
+
+            if (err) throw err;
+            res.send(grado)
 
         })
 
@@ -251,6 +311,17 @@ class Controller {
 
     }
 
+    buscarUnLaboratorio(id, res){
+
+        Lab.findOne({ _id: id }, (err,lab) => {
+
+            if (err) throw err;
+            res.send(lab)
+
+        })
+
+    }
+
     //recursos
 
     createRecursos(req, res) {
@@ -287,6 +358,17 @@ class Controller {
 
     }
 
+    buscarUnRecurso(id, res){
+
+        Rec.findOne({ _id: id }, (err,rec) => {
+
+            if (err) throw err;
+            res.send(rec)
+
+        })
+
+    }
+
     //Periodo
 
     createPeriodo(req, res) {
@@ -318,6 +400,17 @@ class Controller {
             if (err) throw err;
 
             res.send({ message: "Usuario ha sido eliminado" })
+
+        })
+
+    }
+
+    buscarUnPeriodo(id, res){
+
+        Per.findOne({ _id: id }, (err,per) => {
+
+            if (err) throw err;
+            res.send(per)
 
         })
 
